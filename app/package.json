@@ -1,0 +1,32 @@
+{
+  "name": "barcodejacket",
+  "version": "1.0.0",
+  "description": "JavaScript Template Engine For FrontEnd Static Project",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-image": "^5.0.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://fimonex@bitbucket.org/fimonex/barcodejacket.git"
+  },
+  "author": "Ahmad Gharaibeh",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/fimonex/barcodejacket#readme"
+}
