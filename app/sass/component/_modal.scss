@@ -1,0 +1,12 @@
+@import '../variables';
+.modal-header {
+	position: relative;
+	button {
+		padding: 3px !important;
+		position: absolute;
+		right: 10px;
+		i {
+			color: $white;
+		}
+	}
+}

@@ -1,0 +1,111 @@
+@import '../variables';
+
+footer {
+	position: relative;
+	padding: 50px 0px 10px;
+	background-image: url(../image/headerbg.png);
+	background: #101010;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 340px;
+	@media screen and (max-width: 590px) {
+		height: auto;
+	}
+	h4 {
+		font-size: 20px;
+		margin-bottom: 30px;
+		position: relative;
+		word-spacing: 6px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		&:after {
+			left: 0;
+			content: "";
+			width: 52px;
+			height: 3px;
+			bottom: -7px;
+			position: absolute;
+			background: $primary;
+		}
+	}
+	ul li a {
+		font-size: 14px;
+	}
+	&:before {
+		left: 0px;
+		top: 0px;
+		content: "";
+		width: 100%;
+		height: 100%;
+		z-index: 9;
+		position: absolute;
+
+	}
+	.container {
+		z-index: 999;
+		position: relative;
+	}
+	.footer-logo {
+		width: 150px;
+	}
+	.eapps-instagram-feed-container {
+		margin-bottom: -46px;
+		position: relative;
+		z-index: 999999;
+		background: #101010;
+	}
+	.eapps-instagram-feed-posts-item-loaded {
+		border-radius: 8px;
+	}
+	.soceal {
+		a {
+			font-size: 18px;
+			i {
+				transition: color 0.15s ease-in-out;
+			}
+			svg path {
+				transition: fill 0.15s ease-in-out;
+			}
+			&.facebook:hover i {
+				color: #3b5998;
+			}
+			&.instegram:hover i {
+				color: #e1306c;
+			}
+			&.youtube:hover i {
+				color: #f82600;
+			}
+			&.snap-chat:hover i {
+				color: #fffc00;
+			}
+		}
+	}
+	.payment {
+		img {
+			width: 75px;
+			@media screen and (max-width: 992px) {
+				width: 75px;
+			}
+			@media screen and (max-width: 768px) {
+				width: 75px;
+			}
+			@media screen and (max-width: 576px) {
+				width: 75px;
+			}
+		}
+	}
+	.copyright, .links-pages {
+		line-height: 30px;
+		@include typo (12px, $white, 400, 0, auto, $lato, $transform: false);
+	}
+	.links-pages:hover  {
+		color: $primary;
+	}
+	a {
+		color: #f2f2f2;
+		&:hover {
+			color: #ffffff;
+			text-decoration: none;
+		}
+	}
+}

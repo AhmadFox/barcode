@@ -1,0 +1,106 @@
+// Color variables
+// $primary: rgb(185, 168, 10);
+$primary: #c59f24;
+// $primary: #c7b516;
+$secondary: #c2c2c2;
+$success: #00FFA9;
+$info: #0ebde4;
+$danger: #E64759;
+$white: #F1F1F1;
+// $bg: #161619;
+$bg-dark: #19181E;
+$muted: #7e7a7a;
+$dark: #4A4952;
+$dark-over: rgb(56, 56, 56);
+$gray: #888888;
+
+
+// Body Colors
+$body-bg:                   $bg-dark !default;
+$body-color:                $white !default;
+
+
+// container max width brackpoint
+$container-max-width: 1170px !important;
+$container-medium: 100% !important;
+
+// Modals
+
+// Padding applied to the modal body
+
+$modal-content-bg:                  $dark !default;
+$modal-content-border-color:        rgba($dark, .2) !default;
+
+$modal-header-border-color:         $bg-dark!default;
+$modal-footer-border-color:         $bg-dark !default;
+$modal-header-padding:              .5rem 1rem !default;
+
+$modal-transition:                  transform .3s ease-out !default;
+// Dropdown valus
+$dropdown-bg: $dark;
+$dropdown-border-color: none;
+$dropdown-divider-bg: $bg-dark;
+$dropdown-link-hover-color: $bg-dark;
+
+
+// Brder raduis
+$border-circle: 100%;
+$border-xlarge: 6px;
+$border-defualt: 4px;
+$border-medium: 3px;
+$border-small: 2px;
+
+// Font weight
+$weight-thin: 100;
+$weight-light: 300;
+$weight-normal: 400;
+$weight-medium: 500;
+$weight-smibold: 600;
+$weight-bold: 700;
+$weight-bolder: 900;
+
+// Buttons height
+$btn-height-xs: 25px;
+$btn-height-sm: 27px;
+$btn-height-md: 30px;
+$btn-height-lg: 35px;
+$btn-height-xl: 45px;
+
+// Fonts Type
+$lato: 'Lato', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+
+// Text color
+$text-dark: $dark;
+$text-info: $info;
+$text-muted: $muted;
+$text-white: $white;
+$text-danger: $danger;
+$text-success: $success;
+$text-primary: $primary;
+$text-secondary: $secondary;
+
+// Mixin typo text
+@mixin typo ($size, $color, $weight, $margin,$line-height, $family, $transform: true) {
+	color: $color;
+	line-height: $line-height;
+	margin: $margin;
+	font-size: $size;
+	font-weight: $weight;
+	font-family: $family;
+	vertical-align: middle;
+	@if $transform == true {
+		text-transform: uppercase;
+	}
+}
+
+@mixin typo-btn ($size, $weight, $family, $transform: true) {
+	font-size: $size;
+	font-weight: $weight;
+	font-family: $family;
+	vertical-align: middle;
+	@if $transform == true {
+		text-transform: uppercase;
+	}
+}
+

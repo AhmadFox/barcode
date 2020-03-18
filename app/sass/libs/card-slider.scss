@@ -1,0 +1,137 @@
+@import "../variables";
+@import "../fonts/variables";
+.owl-nav {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    top: 31%;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 0;
+}
+
+@media (max-width: 1270px) {
+    .owl-nav .owl-prev {
+        left: -10px !important;
+    }
+    .owl-nav .owl-next {
+        right: -10px !important;
+    }
+}
+
+.owl-nav .owl-prev {
+    position: relative;
+    left: -35px;
+    .fa-angle-left:before {
+        font-size: 55px;
+        color: $primary;
+        content: $icon-angle-left; 
+    }
+}
+
+.owl-nav .owl-next {
+    position: relative;
+    right: -35px;
+    .fa-angle-right:before {
+        font-size: 55px;
+        color: $primary;
+        content: $icon-angle-right; 
+    }
+}
+.product-slider .item {
+    text-align: center;
+    .owl-nav {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+    }
+    .container {
+        max-width: 1200px !important;
+    }
+    padding: 15px 10px;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    .card {
+        max-height: 450px;
+        .info-col {
+            margin-bottom: 25px;
+            padding: 15px 25px;
+        }
+        position: relative;
+        background: $bg-dark;
+        height: 75vh;
+        border-radius: 6px;
+        padding: 2rem;
+        color: #aaa;
+        box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),
+            0 0 1rem rgba(0,0,0,0.2);
+        overflow: hidden;
+        
+        &__image-container {
+            margin:  -5rem -2rem 0rem -3.75rem;
+        }
+        
+        &__line {
+        opacity: 0;
+        animation: LineFadeIn .8s .8s forwards ease-in;
+        }
+
+        &__image {
+            opacity: 0;
+            animation: ImageFadeIn .8s 1.4s forwards;
+        }
+
+        &__title {
+            font-size: 25px;
+            color:$primary;
+            margin-top: 0;
+        }
+        
+        &__content {
+            margin-top: -2rem;
+            opacity: 0;
+            animation: ContentFadeIn .8s 1.6s forwards;
+        }
+        
+        &__svg {
+            position: absolute;
+            left: 0;
+            top: 115px;
+            path:first-child {
+                fill: $bg-dark;
+            }
+        }
+
+        @keyframes LineFadeIn {
+        0% { opacity: 0; d: path("M 0 300 Q 0 300 0 300 Q 0 300 0 300 C 0 300 0 300 0 300 Q 0 300 0 300 "); stroke: #fff; }
+        50% { opacity: 1; d: path("M 0 300 Q 50 300 100 300 Q 250 300 350 300 C 350 300 500 300 650 300 Q 750 300 800 300"); stroke: $primary; }
+        100% { opacity: 1; d: path("M -2 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 802 400"); stroke: $primary; }
+        }
+
+        @keyframes ContentFadeIn {
+        0% { transform: translateY(-1rem); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes ImageFadeIn {
+        0% { transform: translate(-.5rem, -.5rem) scale(1.05); opacity: 0; filter: blur(2px); }
+        50% { opacity: 1; filter: blur(2px); }
+        100% { transform: translateY(0) scale(1.0); opacity: 1; filter: blur(0); }
+        }
+    }
+    .btn {
+        margin: 20px 0px;
+        color: $bg-dark;
+        border: 1.5px solid $bg-dark;
+        &:hover {
+            color: #f1f1f1;
+            background: $bg-dark;
+        }
+    }
+} 

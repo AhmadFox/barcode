@@ -1,0 +1,190 @@
+@import "../../variables";
+.product-card {
+  .card-img-top {
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .card-overlay {
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      display: none !important;
+      background-color: rgba(3, 3, 4, 0.65);
+      .abs-icon {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    .card-price {
+      top: 10px;
+      right: 10px;
+      width: 60px;
+      height: 75px;
+      z-index: 10;
+      position: absolute;
+      span {
+        line-height: 13px;
+        @include typo-btn(11px, $weight-smibold, $open-sans, $transform: true);
+      }
+      p {
+        position: relative;
+        small {
+          top: 3px;
+          right: -2px;
+          font-size: 11px;
+          position: absolute;
+        }
+      }
+    }
+  }
+  &.show {
+    .card-overlay {
+      display: flex !important;
+    }
+  }
+  &.oneside {
+    overflow: hidden;
+    position: relative;
+    .card-body {
+      z-index: 9;
+      bottom: 0;
+      height: 75px;
+      position: relative;
+      transition: bottom 0.15s linear;
+      background: #2a2b31 !important;
+      &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 20px;
+        bottom: 0px;
+        left: 0;
+        z-index: 2;
+        background: -moz-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(37, 38, 43, 1) 70%
+        );
+        background: -webkit-linear-gradient(
+          top,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(37, 38, 43, 1) 70%
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(37, 38, 43, 1) 70%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#25262b',GradientType=0 );
+      }
+      .smehow {
+        display: none;
+        left: 0;
+        bottom: 15px;
+        position: absolute;
+      }
+    }
+    &:hover {
+      .card-body {
+        min-height: 185px;
+        position: relative;
+        bottom: 80px;
+        margin-bottom: -98px;
+        &:after {
+          display: none;
+        }
+        .smehow {
+          display: block;
+        }
+      }
+    }
+  }
+}
+.card {
+  border: none;
+  .card-body {
+    p {
+      line-height: 17px;
+      @include typo-btn(14px, $weight-medium, $lato, $transform: false);
+    }
+    .close-flip {
+      top: 10px;
+      right: 10px;
+      color: $white;
+      font-size: 22px;
+      position: absolute;
+      text-decoration: none;
+    }
+  }
+}
+// start filp state card
+.card-flip {
+  perspective: 1000px;
+  &.flip-action .flip {
+    transform: rotateY(180deg);
+  }
+  .product-title {
+    font-size: 16px;
+    @media screen and (max-width: 500px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.card-flip,
+.front,
+.back {
+  width: 100%;
+  height: 480px;
+}
+
+.flip {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+.card-overlay {
+  display: none;
+  &.show {
+    @media (max-width: 575.98px) {
+      display: block;
+    }
+  }
+  .card {
+    height: 100%;
+    position: fixed;
+    top: 65px;
+    border-top: 1px solid #333;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+  }
+}

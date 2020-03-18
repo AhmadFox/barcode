@@ -1,0 +1,116 @@
+@import './variables';
+:root {
+--input-padding-x: .75rem;
+--input-padding-y: .75rem;
+}
+// input field 
+// .. placeholder material label trick >;)
+.form-label-group {
+	position: relative;
+	input, textarea, select {
+	-webkit-appearance: none;
+	appearance: none;
+	  font-size: 14px;
+	  color: $light;
+	  background-color: $gray-900;
+	  border-color: transparent;
+	  padding: var(--input-padding-y) var(--input-padding-x);
+	  height: 47px;
+	  &:focus {
+	    color: $light;
+	    box-shadow: none;
+	    border-color: $primary;
+	    background-color: $gray-900;
+	  }
+	}
+	i {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		font-size: 29px;
+	}
+	textarea {
+		padding-top: 20px;
+		min-height: 100px;
+	}
+	textarea:focus-within ~ label,
+	textarea:focus ~ label{
+		padding-top: calc(var(--input-padding-y) / 3);
+		padding-bottom: calc(var(--input-padding-y) / 3);
+		font-size: 12px;
+		color: $primary !important;
+		font-weight: bold;
+	}
+	select::-ms-expand {
+		display: none;
+	}
+	select{
+	-webkit-appearance: none;
+	appearance: none;
+	&:hover ~ label  {
+		padding-top: calc(var(--input-padding-y) / 3);
+		padding-bottom: calc(var(--input-padding-y) / 3);
+		font-size: 12px;
+		color: $primary !important;
+		font-weight: bold;
+	}
+	&.choosed-value {
+		padding-top: 20px;
+		padding-bottom: 0px;
+	}
+	}
+	// @-moz-document url-prefix(){
+	// .ui-select{border: 1px solid #CCC; border-radius: 4px; box-sizing: border-box; position: relative; overflow: hidden;}
+	// .ui-select select { width: 110%; background-position: right 30px center !important; border: none !important;}
+	// }
+	input::-webkit-input-placeholder,
+	textarea::-webkit-input-placeholder {
+		color: transparent;
+	}
+	input:-ms-input-placeholder {
+		color: transparent;
+	}
+	input::-ms-input-placeholder {
+		color: transparent;
+	}
+	input::-moz-placeholder {
+		color: transparent;
+	}
+	input::placeholder {
+		color: transparent;
+	}
+	input:not(:placeholder-shown) {
+		padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+		padding-bottom: calc(var(--input-padding-y) / 3);
+	}
+	input:not(:placeholder-shown) ~ label,
+	input:focus-within ~ label,
+	input:focus ~ label,
+	textarea:not(:placeholder-shown) ~ label  {
+		padding-top: calc(var(--input-padding-y) / 3);
+		padding-bottom: calc(var(--input-padding-y) / 3);
+		font-size: 12px;
+		color: $primary !important;
+		font-weight: bold;
+	}
+	
+	label {
+		top: 0;
+		left: 0;
+		margin-bottom: 0;
+		line-height: 25px;
+		position: absolute;
+		color: $gray-400 !important;
+		border-color: transparent;
+		transition: all .1s ease-in-out;
+		padding: var(--input-padding-y) var(--input-padding-x);
+
+		&.seleced-label {
+			padding-top: calc(var(--input-padding-y) / 3);
+			padding-bottom: calc(var(--input-padding-y) / 3);
+			font-size: 12px;
+			color: $primary !important;
+			font-weight: bold;
+		}
+	}
+}

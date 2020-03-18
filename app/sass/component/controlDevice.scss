@@ -1,0 +1,87 @@
+@import '../variables';
+.control-device {
+    position: fixed;
+    background: #f1f1f1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #f1f1f1;
+    .control-hrader {
+        position: relative;
+        height: 60px;
+        padding: 10px;
+        background: #fff;
+        .action-close-panel {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 15px;
+            svg {
+                stroke: #000;
+            }
+        }
+        h4 {
+            margin: 0px;
+            text-align: center;
+            color: #000;
+            line-height: 40px;
+        }
+    }
+    .control-blet {
+        padding:10px;
+        background-color: #333;
+        a {
+            display: block;
+            text-align: center;
+            &:last-child {
+                margin-right: 0px;
+            }
+            img {
+                width: 60px;
+                border-radius: 4px;
+            }
+            span {
+                line-height: 1;
+                margin-top: 8px;
+                font-size: 12px;
+                color: #fff
+            }
+        }
+    }
+    .control-body {
+        padding: 10px;
+        .color-container {
+            li {
+                margin-right: 0px;
+                .color-item {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 4px;
+                    border: 2px solid #fff;
+                    display: block;
+                    background: #fff;
+                    margin-bottom: 5px;
+                    margin-right: 5px;
+                    &.active {
+                        border-color: rgb(219, 171, 14);
+                    }
+                }
+            }
+        }
+        .image-art-categorys {
+            .card-image {
+                width: 100%;
+                position: relative;
+                text-align: center;
+                padding: 10px;
+                background-color: #a0a0a0;
+                border-radius: 4px;
+                margin-bottom: 16px;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

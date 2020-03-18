@@ -1,0 +1,11 @@
+@import '../variables';
+.light-gellary {
+	img {
+		width: 100%;
+	}
+}
+.lg-thumb-item {
+	&.active, &:hover {
+		border-color: $primary !important;
+	}
+}

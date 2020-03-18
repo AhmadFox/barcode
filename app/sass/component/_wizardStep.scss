@@ -1,0 +1,153 @@
+@import "../variables";
+@import "../fonts/variables";
+.wizard-step {
+  margin: 0 auto;
+  .stp {
+    width: 12%;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    @media (max-width: 767.98px) {
+      width: 25%;
+    }
+    @media (max-width: 575.98p) {
+      width: 100%;
+    }
+    .cercle {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 3px solid #cccccc;
+      &:before {
+        top: 8px;
+        position: relative;
+      }
+      .checkmark__circle {
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        stroke-width: 3;
+        stroke-miterlimit: 10;
+        stroke: $primary;
+        fill: none;
+        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+      }
+
+      .checkmark {
+        position: absolute;
+        top: -14px;
+        left: 0px;
+        display: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        stroke-width: 3;
+        stroke: $dark;
+        stroke-miterlimit: 10;
+        margin: 10% auto;
+        box-shadow: inset 0px 0px 0px $primary;
+        animation: fill 0.4s ease-in-out 0.4s forwards,
+          scale 0.3s ease-in-out 0.9s both;
+      }
+
+      .checkmark__check {
+        transform-origin: 50% 50%;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+      }
+
+      @keyframes stroke {
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes scale {
+        0%,
+        100% {
+          transform: none;
+        }
+        50% {
+          transform: scale3d(1.1, 1.1, 1);
+        }
+      }
+      @keyframes fill {
+        100% {
+          box-shadow: inset 0px 0px 0px 30px $primary;
+        }
+      }
+    }
+    .progress {
+      top: 22px;
+      width: calc(100% - 41px);
+      left: 45px;
+      height: 3px;
+      border-radius: 0;
+      position: absolute;
+      .progress-bar {
+        width: 0%;
+        transition: width 1s;
+        -webkit-transition: width 1s;
+        -webkit-transition-timing-function: ease-in;
+      }
+    }
+    p {
+      width: 55px;
+      margin-left: -5px;
+      line-height: 13px;
+      @include typo-btn(11px, $weight-smibold, $lato, $transform: false);
+    }
+    &:first-child {
+      .cercle:before {
+        content: "1";
+      }
+    }
+    &:nth-child(2) {
+      .cercle:before {
+        content: "2";
+      }
+    }
+    &:nth-child(3) {
+      .cercle:before {
+        content: "3";
+      }
+    }
+    &:last-child {
+      width: unset;
+      .cercle:before {
+        content: "4";
+      }
+      svg {
+        top: 0 !important;
+        left: 0 !important;
+        margin: 0 !important;
+      }
+    }
+    &.selected {
+      .cercle {
+        border-color: $primary;
+        &:before {
+          color: $primary;
+        }
+      }
+      p {
+        color: $primary;
+      }
+    }
+    &.compleate {
+      position: relative;
+      .checkmark {
+        display: block;
+        position: absolute;
+        @media screen and (max-width: 500px) {
+          top: -7px;
+        }
+      }
+      .progress-bar {
+        width: 100%;
+      }
+      p {
+        color: $primary;
+      }
+    }
+  }
+}
