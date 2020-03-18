@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    {% include "common/head.html" %}
+    <link rel="stylesheet" href="css/page/home.css">
+
+</head>
+
+<body>
+
+
+    <div class="page-wrapper pb-0">
+
+        {% block content %} {% endblock %}
+
+
+        {% include "./common/header/cartSidebar.html" %}
+    </div>
+
+    {% include "./common/footer.html" %}
+
+
+    {% include "common/script.html" %}
+</body>
+
+</html>
